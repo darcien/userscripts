@@ -1,13 +1,13 @@
 import {
-  makeStoreKey,
+  getAllInputValues,
+  getSaveButton,
   InputValues,
   isCurrentInputEmpty,
-  setAllInputValues,
-  log,
-  getAllInputValues,
   isShallowEqual,
+  log,
+  makeStoreKey,
+  setAllInputValues,
   warn,
-  getSaveButton,
 } from "./utils";
 
 const MAX_HISTORY_PER_PATH = 5;
@@ -19,10 +19,12 @@ function shouldInstall(path = location.pathname): boolean {
 
 function backupAllInputValues(toBackup: InputValues) {
   const storeKey = makeStoreKey(location.pathname);
-  return idbKeyval.update(storeKey, (storedValues) =>
-    Array.isArray(storedValues)
-      ? [...storedValues, toBackup].slice(-MAX_HISTORY_PER_PATH)
-      : [toBackup]
+  return idbKeyval.update(
+    storeKey,
+    (storedValues) =>
+      Array.isArray(storedValues)
+        ? [...storedValues, toBackup].slice(-MAX_HISTORY_PER_PATH)
+        : [toBackup],
   );
 }
 
@@ -31,7 +33,7 @@ function createRestoreBackupOnClickHandler() {
     if (
       isCurrentInputEmpty() ||
       confirm(
-        "⚠️ Restoring backup will replace all text inputs content with the latest backup — do you want to do it?"
+        "⚠️ Restoring backup will replace all text inputs content with the latest backup — do you want to do it?",
       )
     ) {
       const storeKey = makeStoreKey(location.pathname);
@@ -63,7 +65,7 @@ function createRestoreBackupButton(saveButton: HTMLButtonElement) {
 
 function addRestoreButtonToDom(
   save: HTMLButtonElement,
-  restore: HTMLButtonElement
+  restore: HTMLButtonElement,
 ) {
   save.parentNode?.appendChild(restore);
 }
@@ -91,7 +93,7 @@ function installToCurrentPage() {
   const saveButton = getSaveButton();
   if (saveButton == null) {
     warn(
-      "Unable to locate save button in page, restore backup button will be not available"
+      "Unable to locate save button in page, restore backup button will be not available",
     );
   }
 

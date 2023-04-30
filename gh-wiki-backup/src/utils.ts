@@ -1,5 +1,5 @@
 export function getInputValue(selector: string) {
-  const el = <HTMLInputElement | HTMLTextAreaElement | null>(
+  const el = <HTMLInputElement | HTMLTextAreaElement | null> (
     document.querySelector(selector)
   );
   return el?.value || "";
@@ -19,7 +19,9 @@ export function getAllInputValues() {
 }
 
 export function getSaveButton() {
-  return <HTMLButtonElement | null>document.querySelector(SAVE_BUTTON_SELECTOR);
+  return <HTMLButtonElement | null> document.querySelector(
+    SAVE_BUTTON_SELECTOR,
+  );
 }
 
 export type InputValues = ReturnType<typeof getAllInputValues>;
@@ -31,9 +33,9 @@ export function isCurrentInputEmpty() {
 
 export function setValueIfInputElementExist(
   selector: string,
-  newValue: string
+  newValue: string,
 ) {
-  const el = <HTMLInputElement>document.querySelector(selector);
+  const el = <HTMLInputElement> document.querySelector(selector);
   if (el) {
     el.value = newValue;
   }
@@ -47,7 +49,7 @@ export function setAllInputValues(values: InputValues) {
 
 export function isShallowEqual(
   a: Record<string, string>,
-  b: Record<string, string>
+  b: Record<string, string>,
 ) {
   for (const key of Object.keys(a)) {
     if (a[key] !== b[key]) {

@@ -1,0 +1,8 @@
+{
+  "fmt": {
+    // deno fmt doesn't support glob yet
+    // https://github.com/denoland/deno/issues/6365
+    // "include": ["src/", "*.ts"]
+    "exclude": ["dist-dev/", "dist-next/", "dist/"]
+  }
+}
