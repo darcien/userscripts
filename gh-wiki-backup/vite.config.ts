@@ -4,6 +4,10 @@ import packageJson from "./package.json";
 
 export default defineConfig((_config) => {
   return {
+    // Tried disabling minification to make
+    // built files readable.
+    // Doesn't work.
+    // build: { minify: false },
     plugins: [
       Userscript({
         entry: "src/mod.ts",
