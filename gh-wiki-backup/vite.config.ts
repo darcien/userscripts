@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import Userscript from "vite-userscript-plugin";
+import Userscript from "@darcien/vite-userscript-plugin";
 import packageJson from "./package.json";
 
 export default defineConfig((_config) => {

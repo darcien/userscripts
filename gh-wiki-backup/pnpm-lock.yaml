@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 devDependencies:
+  '@darcien/vite-userscript-plugin':
+    specifier: ^1.9.0
+    version: 1.9.0(vite@4.3.3)
   idb-keyval:
     specifier: ^6.2.0
     version: 6.2.0
@@ -10,11 +13,23 @@ devDependencies:
   vite:
     specifier: ^4.3.2
     version: 4.3.3
-  vite-userscript-plugin:
-    specifier: github:darcien/vite-userscript-plugin
-    version: github.com/darcien/vite-userscript-plugin/1a9e36da78347a6037edcf6524b2bb92bf15a0e2(vite@4.3.3)
 
 packages:
+
+  /@darcien/vite-userscript-plugin@1.9.0(vite@4.3.3):
+    resolution: {integrity: sha512-HDB7KGJllMZTHgMjomfbt/yaZBrZyn31uYcezmmIXZ4O8J2f4q5wBpFcNdNczj+iRslIkYl7p0zzWiNcsFivlQ==}
+    peerDependencies:
+      vite: '>=3.0.0'
+    dependencies:
+      get-port: 6.1.2
+      open: 8.4.2
+      picocolors: 1.0.0
+      serve-handler: 6.1.5
+      vite: 4.3.3
+      websocket: 1.0.34
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@esbuild/android-arm64@0.17.18:
     resolution: {integrity: sha512-/iq0aK0eeHgSC3z55ucMAHO05OIqmQehiGay8eP5l/5l+iEr4EIbh4/MI8xD9qRFjqzgkc0JkX0LculNC9mXBw==}
@@ -556,22 +571,4 @@ packages:
   /yaeti@0.0.6:
     resolution: {integrity: sha512-MvQa//+KcZCUkBTIC9blM+CU9J2GzuTytsOUwf2lidtvkx/6gnEp1QvJv34t9vdjhFmha/mUiNDbN0D0mJWdug==}
     engines: {node: '>=0.10.32'}
-    dev: true
-
-  github.com/darcien/vite-userscript-plugin/1a9e36da78347a6037edcf6524b2bb92bf15a0e2(vite@4.3.3):
-    resolution: {tarball: https://codeload.github.com/darcien/vite-userscript-plugin/tar.gz/1a9e36da78347a6037edcf6524b2bb92bf15a0e2}
-    id: github.com/darcien/vite-userscript-plugin/1a9e36da78347a6037edcf6524b2bb92bf15a0e2
-    name: vite-userscript-plugin
-    version: 1.8.1
-    peerDependencies:
-      vite: '>=3.0.0'
-    dependencies:
-      get-port: 6.1.2
-      open: 8.4.2
-      picocolors: 1.0.0
-      serve-handler: 6.1.5
-      vite: 4.3.3
-      websocket: 1.0.34
-    transitivePeerDependencies:
-      - supports-color
     dev: true
