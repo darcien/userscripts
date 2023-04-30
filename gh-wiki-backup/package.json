@@ -6,8 +6,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite build --watch --mode development",
-    "build": "vite build"
+    "dev": "vite build --watch --mode development --outDir dist-dev",
+    "build:next": "vite build --outDir dist-next",
+    "build:stable": "vite build --outDir dist",
+    "build": "pnpm build:next"
   },
   "devDependencies": {
     "idb-keyval": "^6.2.0",

@@ -8,17 +8,11 @@ export default defineConfig((config) => {
       Userscript({
         entry: "src/mod.ts",
         header: {
-          name: "GitHub Wiki Backup",
+          name: packageJson.name,
           version: packageJson.version,
           description: packageJson.description,
           author: packageJson.author,
-          // TODO: migrate to match to make script work when navigating from different pages
-          match: [],
-          // match: ["https://github.com/*"],
-          include: [
-            "/^https://github.com/.+/wiki/_new$/",
-            "/^https://github.com/.+/wiki/.+/_edit$/",
-          ],
+          match: ["https://github.com/*"],
           require: ["https://cdn.jsdelivr.net/npm/idb-keyval@6/dist/umd.js"],
         },
         server: {
