@@ -1,0 +1,18 @@
+{
+  "name": "gh-wiki-backup",
+  "description": "Automatically backup unsaved GitHub Wiki changes before page unload.",
+  "author": "darcien",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "idb-keyval": "^6.2.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2",
+    "vite-userscript-plugin": "^1.8.1"
+  }
+}
