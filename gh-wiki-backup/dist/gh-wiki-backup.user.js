@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        gh-wiki-backup
+// @name        GitHub Wiki Backup
 // @version     1.0.0
 // @description Automatically backup unsaved GitHub Wiki changes before page unload.
 // @author      darcien

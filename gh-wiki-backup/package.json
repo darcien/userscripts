@@ -8,9 +8,10 @@
   "scripts": {
     "dev": "vite build --watch --mode development --outDir dist-dev",
     "build:next": "vite build --outDir dist-next",
-    "build:stable": "vite build --outDir dist",
+    "build:stable": "vite build --outDir dist && pnpm patch-dist",
     "build": "pnpm build:next",
-    "format": "deno fmt"
+    "format": "deno fmt",
+    "patch-dist": "deno run --allow-read --allow-write scripts/patch-dist.ts"
   },
   "devDependencies": {
     "idb-keyval": "^6.2.0",

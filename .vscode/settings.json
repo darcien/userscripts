@@ -1,5 +1,7 @@
 {
   "deno.enable": false,
+  // deno.enablePaths does not support glob
+  "deno.enablePaths": ["./gh-wiki-backup/scripts"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "denoland.vscode-deno",
   "[typescript]": {
