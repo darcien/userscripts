@@ -1,3 +1,6 @@
+/**
+ * This script functionality is now implemented in the forked plugin
+ */
 import packageJson from "../package.json" assert { type: "json" };
 
 // Our vite plugin builds the file using name from package.json

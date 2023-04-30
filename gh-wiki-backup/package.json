@@ -8,15 +8,14 @@
   "scripts": {
     "dev": "vite build --watch --mode development --outDir dist-dev",
     "build:next": "vite build --outDir dist-next",
-    "build:stable": "vite build --outDir dist && pnpm patch-dist",
+    "build:stable": "vite build --outDir dist",
     "build": "pnpm build:next",
-    "format": "deno fmt",
-    "patch-dist": "deno run --allow-read --allow-write scripts/patch-dist.ts"
+    "format": "deno fmt"
   },
   "devDependencies": {
     "idb-keyval": "^6.2.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.2",
-    "vite-userscript-plugin": "^1.8.1"
+    "vite-userscript-plugin": "github:darcien/vite-userscript-plugin"
   }
 }

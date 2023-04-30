@@ -2,13 +2,14 @@ import { defineConfig } from "vite";
 import Userscript from "vite-userscript-plugin";
 import packageJson from "./package.json";
 
-export default defineConfig((config) => {
+export default defineConfig((_config) => {
   return {
     plugins: [
       Userscript({
         entry: "src/mod.ts",
+        fileName: packageJson.name,
         header: {
-          name: packageJson.name,
+          name: "GitHub Wiki Backup",
           version: packageJson.version,
           description: packageJson.description,
           author: packageJson.author,
