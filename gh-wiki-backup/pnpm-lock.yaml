@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 devDependencies:
   '@darcien/vite-userscript-plugin':
-    specifier: ^1.9.0
-    version: 1.9.0(vite@4.3.3)
+    specifier: ^1.10.0
+    version: 1.10.0(vite@4.3.3)
   idb-keyval:
     specifier: ^6.2.0
     version: 6.2.0
@@ -16,8 +16,8 @@ devDependencies:
 
 packages:
 
-  /@darcien/vite-userscript-plugin@1.9.0(vite@4.3.3):
-    resolution: {integrity: sha512-HDB7KGJllMZTHgMjomfbt/yaZBrZyn31uYcezmmIXZ4O8J2f4q5wBpFcNdNczj+iRslIkYl7p0zzWiNcsFivlQ==}
+  /@darcien/vite-userscript-plugin@1.10.0(vite@4.3.3):
+    resolution: {integrity: sha512-YyElUIznRODa8fudPHQCVWtmsGxUsx7O9VN4THYj9K89UvS2ZesPFBR4YzRQmn9pgYvs+4qcKVwgS2QlZbXm/g==}
     peerDependencies:
       vite: '>=3.0.0'
     dependencies:

@@ -13,7 +13,7 @@
     "format": "deno fmt"
   },
   "devDependencies": {
-    "@darcien/vite-userscript-plugin": "^1.9.0",
+    "@darcien/vite-userscript-plugin": "^1.10.0",
     "idb-keyval": "^6.2.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"

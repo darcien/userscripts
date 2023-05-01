@@ -4,9 +4,7 @@ import packageJson from "./package.json";
 
 export default defineConfig((_config) => {
   return {
-    // Tried disabling minification to make
-    // built files readable.
-    // Doesn't work.
+    // See `Userscript.jsEsbuildTransformOptions.minify` instead.
     // build: { minify: false },
     plugins: [
       Userscript({
@@ -23,6 +21,14 @@ export default defineConfig((_config) => {
             "https://github.com/darcien/userscripts/tree/master/gh-wiki-backup",
           downloadURL:
             "https://github.com/darcien/userscripts/raw/master/gh-wiki-backup/dist/gh-wiki-backup.user.js",
+        },
+        jsEsbuildTransformOptions: {
+          // Only minify syntax and whitespace
+          // to avoid obfuscating the userscript.
+          minify: false,
+          minifySyntax: true,
+          minifyWhitespace: true,
+          // minifyIdentifiers: true,
         },
         server: {
           port: 3000,
