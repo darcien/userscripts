@@ -15,7 +15,7 @@ export default defineConfig((_config) => {
           version: packageJson.version,
           description: packageJson.description,
           author: packageJson.author,
-          match: ["https://nicochannel.jp/*"],
+          match: ["https://nicochannel.jp/*", "https://qlover.jp/*"],
           homepageURL:
             "https://github.com/darcien/userscripts/tree/master/disable-disablepictureinpicture",
           downloadURL:
