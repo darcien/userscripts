@@ -1,0 +1,180 @@
+/* ==UserStyle==
+@name          AtomVM Docs - Catppuccin Mocha
+@namespace     github.com/darcien/userscripts
+@homepageURL   https://github.com/darcien/userscripts/tree/master/atomvm-docs-catppuccin
+@updateURL     https://raw.githubusercontent.com/darcien/userscripts/master/atomvm-docs-catppuccin/catppuccin-mocha.user.css
+@version       1.0.0
+@description   Catppuccin Mocha dark theme for AtomVM docs (Read the Docs / Sphinx)
+@author        darcien
+@license       MIT
+==/UserStyle== */
+
+/* Plain CSS (no preprocessor). Works installed as UserCSS (auto-updates from
+ * @updateURL) or pasted into a classic style. Retint by editing :root. */
+@-moz-document domain("doc.atomvm.org") {
+  :root {
+    --base: #1e1e2e; --mantle: #181825; --crust: #11111b;
+    --s0: #313244; --s1: #45475a; --s2: #585b70;
+    --o0: #6c7086; --o1: #7f849c; --sub0: #a6adc8; --sub1: #bac2de; --text: #cdd6f4;
+    --blue: #89b4fa; --sky: #89dceb; --mauve: #cba6f7; --red: #f38ba8;
+    --peach: #fab387; --green: #a6e3a1; --yellow: #f9e2af; --teal: #94e2d5;
+  }
+
+  /* Base layout */
+  body, .wy-body-for-nav, .wy-grid-for-nav, .wy-nav-content-wrap, .wy-nav-content {
+    background: var(--base) !important;
+    color: var(--text);
+  }
+  html { scrollbar-color: var(--o0) var(--base); }
+  h1, h2, h3, h4, h5, h6, legend,
+  .rst-content .toctree-wrapper > p.caption { color: var(--text); }
+  hr { border-color: var(--s0); }
+
+  a { color: var(--blue); }
+  a:hover { color: var(--sky); }
+  a:visited { color: var(--mauve); }
+  a.headerlink { color: var(--s2); }
+  a.headerlink:hover { color: var(--mauve); }
+
+  /* Sidebar */
+  .wy-nav-side { background: var(--mantle); }
+  .wy-side-nav-search {
+    background: var(--crust);
+    & > a, & .wy-dropdown > a { color: var(--text); }
+    & > div.version { color: var(--o1); }
+    & input[type="text"] { background: var(--base); border-color: var(--s0); color: var(--text); box-shadow: none; }
+  }
+  .wy-menu-vertical {
+    & p.caption, & header { color: var(--mauve); }
+
+    /* Every sidebar link readable at any depth; !important beats theme's
+       li.current a{grey}, li.toctree-lN a{#404040}, li ul li a{#d9d9d9}. */
+    & a {
+      color: var(--sub1) !important;
+      &:hover { background: var(--s0) !important; color: var(--text) !important; }
+      &:active { background: var(--mauve) !important; color: var(--base) !important; }
+    }
+    & button.toctree-expand, & span.toctree-expand { color: var(--o0); }
+    & a:hover button.toctree-expand, & a:hover span.toctree-expand { color: var(--sub0); }
+
+    & li.current {
+      background: var(--base);
+      & > a { background: var(--base); border-color: var(--s0); color: var(--text) !important; }
+    }
+    & li.on > a { color: var(--text) !important; }
+    & li.toctree-l1.current > a { border-color: var(--s0) !important; }
+    & li.toctree-l2.current > a, & li.toctree-l2.current li.toctree-l3 > a { background: var(--s0) !important; }
+    & li.toctree-l3.current > a, & li.toctree-l3.current li.toctree-l4 > a { background: var(--s1) !important; }
+  }
+
+  /* Mobile top bar */
+  .wy-nav-top {
+    background: var(--mauve);
+    color: var(--base);
+    & a, & i { color: var(--base); }
+  }
+
+  /* Inline code */
+  .rst-content code, .rst-content tt, code {
+    background: var(--mantle) !important;
+    border-color: var(--s0) !important;
+    color: var(--peach) !important;
+  }
+  .rst-content code.xref, .rst-content tt.xref,
+  .rst-content a code, .rst-content a tt { color: var(--blue) !important; }
+
+  /* Code blocks + Pygments */
+  pre, .rst-content div[class^="highlight"], .rst-content pre.literal-block { border-color: var(--s0); }
+  pre, .highlight pre { color: var(--text); }
+  .rst-content .linenodiv pre { color: var(--o0); }
+  .highlight {
+    background: var(--mantle) !important;
+    & .linenos, & .gp { color: var(--o0); }
+    & .hll { background-color: rgba(249, 226, 175, 0.25); }
+    & .c, & .ch, & .cm, & .cp, & .cpf, & .cs, & .c1 { color: var(--o0); font-style: italic; }
+    & .k, & .kc, & .kd, & .kn, & .kp, & .kr, & .kt, & .nt { color: var(--mauve); }
+    & .o, & .ow { color: var(--sky); }
+    & .s, & .sa, & .sb, & .sc, & .dl, & .sd, & .s1, & .s2, & .se,
+    & .sh, & .si, & .sx, & .sr, & .ss, & .sg { color: var(--green); }
+    & .m, & .mi, & .mf, & .mh, & .mo, & .mb, & .il, & .no { color: var(--peach); }
+    & .nf, & .fm, & .nd { color: var(--blue); }
+    & .nc, & .nn, & .na { color: var(--yellow); }
+    & .nb, & .bp { color: var(--red); }
+    & .nv, & .vc, & .vg, & .vi, & .vm { color: var(--text); }
+    & .nl { color: var(--teal); }
+    & .gi { color: var(--green); }
+    & .gd, & .gr, & .gt { color: var(--red); }
+    & .gh, & .gu { color: var(--blue); font-weight: bold; }
+    & .err { border-color: var(--red); }
+    & .w { color: var(--s2); }
+  }
+
+  /* Admonitions: body tint + solid title bar per type */
+  .rst-content .admonition, .rst-content .admonition-todo, .wy-alert {
+    background: var(--mantle);
+    color: var(--text);
+    & .admonition-title, & .wy-alert-title { color: var(--base); }
+  }
+  .rst-content .note, .rst-content .seealso, .wy-alert.wy-alert-info {
+    background: rgba(137, 180, 250, 0.1);
+    & .admonition-title, & .wy-alert-title { background: var(--blue); }
+  }
+  .rst-content .tip, .rst-content .hint, .rst-content .important, .wy-alert.wy-alert-success {
+    background: rgba(166, 227, 161, 0.1);
+    & .admonition-title, & .wy-alert-title { background: var(--green); }
+  }
+  .rst-content .warning, .rst-content .caution, .rst-content .attention,
+  .rst-content .admonition-todo, .wy-alert.wy-alert-warning {
+    background: rgba(250, 179, 135, 0.1);
+    & .admonition-title, & .wy-alert-title { background: var(--peach); }
+  }
+  .rst-content .danger, .rst-content .error, .wy-alert.wy-alert-danger {
+    background: rgba(243, 139, 168, 0.1);
+    & .admonition-title, & .wy-alert-title { background: var(--red); }
+  }
+
+  /* Tables */
+  .rst-content table.docutils, .rst-content table.field-list, .wy-table { border-color: var(--s0); }
+  .rst-content table.docutils td, .rst-content table.docutils th,
+  .wy-table td, .wy-table th { background: var(--base); border-color: var(--s0); color: var(--text); }
+  .rst-content table.docutils thead th, .wy-table thead th,
+  .rst-content table.field-list th { background: var(--s0); color: var(--text); border-color: var(--s1); }
+  .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
+  .wy-table-odd td, .wy-table-striped tr:nth-child(2n-1) td { background: var(--mantle); }
+
+  /* Buttons */
+  .btn {
+    background: var(--s0); color: var(--text); border-color: var(--s1); box-shadow: none;
+    &:hover { background: var(--s1); color: var(--text); }
+  }
+  .btn-neutral {
+    background: var(--s0) !important; color: var(--text) !important;
+    &:hover { background: var(--s1) !important; }
+    &:visited { color: var(--text) !important; }
+  }
+
+  /* API / definition signatures */
+  html.writer-html4 .rst-content dl:not(.docutils) > dt,
+  html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt {
+    background: rgba(137, 180, 250, 0.1); border-top-color: var(--blue); color: var(--blue);
+  }
+  .rst-content dl:not(.docutils) code.descname,
+  .rst-content dl:not(.docutils) .sig-name { color: var(--blue); }
+
+  /* Misc */
+  .rst-content blockquote { border-left-color: var(--s1); color: var(--sub1); }
+  .rst-content .guilabel { background: rgba(137, 180, 250, 0.2); border-color: var(--blue); color: var(--text); }
+  .rst-content .highlighted { background: rgba(249, 226, 175, 0.4); color: var(--text); box-shadow: 0 0 0 2px rgba(249, 226, 175, 0.4); }
+
+  footer, .rst-content footer, .rst-footer-buttons {
+    color: var(--sub0);
+    & a { color: var(--blue); }
+  }
+  .rst-versions {
+    background: var(--mantle);
+    & .rst-current-version { background: var(--crust); color: var(--green); }
+    & a { color: var(--blue); }
+    & .rst-other-versions { color: var(--sub1); }
+    & .rst-other-versions hr { border-color: var(--s0); }
+  }
+}
