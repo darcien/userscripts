@@ -3,6 +3,12 @@
 An userscript that removes the `disablePictureInPicture` attribute from video
 elements, allowing Picture-in-Picture mode on videos.
 
+In theory the script should work for any generic website. But my use case is
+specific for these Sheeta-based websites:
+
+- https://nicochannel.jp
+- https://qlover.jp
+
 It also removes other client-side workarounds against Picture-in-Picture:
 
 - Prevents the site from adding the attribute again.
@@ -13,3 +19,8 @@ It also removes other client-side workarounds against Picture-in-Picture:
 
 Obviously can't bypass `Permissions-Policy: picture-in-picture=()` header sent
 by the server.
+
+## Install
+
+Install [Violentmonkey](https://violentmonkey.github.io/), then open
+[disable-disablepictureinpicture.user.js](https://github.com/darcien/userscripts/raw/master/disable-disablepictureinpicture/dist/disable-disablepictureinpicture.user.js).
