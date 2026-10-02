@@ -16,6 +16,10 @@ export default defineConfig((_config) => {
           description: packageJson.description,
           author: packageJson.author,
           match: ["https://nicochannel.jp/*", "https://qlover.jp/*"],
+          // The prototype patch reaches the page code only in the page context.
+          // The default `auto` falls back to a content script
+          // when CSP blocks the page context.
+          "inject-into": "page",
           homepageURL:
             "https://github.com/darcien/userscripts/tree/master/disable-disablepictureinpicture",
           downloadURL:

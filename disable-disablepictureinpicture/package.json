@@ -1,9 +1,9 @@
 {
   "name": "disable-disablepictureinpicture",
-  "description": "Remove disablePictureInPicture attribute from video elements to enable Picture-in-Picture mode.",
+  "description": "Remove disablePictureInPicture attribute from video elements, and other client-side workarounds against Picture-in-Picture mode.",
   "author": "darcien",
   "private": true,
-  "version": "1.1.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite build --watch --mode development --outDir dist-dev",
